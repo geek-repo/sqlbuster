@@ -45,7 +45,7 @@ def comp(a,b):
 
 def checkwaf(temp):
     print "[+] Checking for waf bypass"
-    if "Forbidden" and "403" in temp:
+    if "Forbidden" or "403" or "Acceptable" or "Mod_Security" in temp:
         return True
     else:
         return False
