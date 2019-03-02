@@ -182,7 +182,7 @@ def union(str):
                 totals=totals.replace(aas,"Pwned by Sarthak")
                 ss.append(dict[aas])
 
-    if count<1:
+    if len(totals)==0:
         print str
 
 def bypass(temp): #bypass orderby
@@ -199,7 +199,7 @@ def bypass2(temp): #bypass orderby
 
 def test():
     print "#################################"
-    print "\n           SQL BUSTER v1.2"
+    print "\n           SQL BUSTER v1.3"
     print "\n               Made by Sarthak"
     print "\n#################################"
 
