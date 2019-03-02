@@ -6,4 +6,4 @@ syntex:-python dumper.py
 This tool still needs some work to bypass waf but still it works really fine and can bypass basic waf :)
 
 Demo:-
-![](lulsql220190302_123016.gif)
+![](lulsql220190302_12301.gif)
