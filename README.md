@@ -1,5 +1,5 @@
 # sqlbuster
-It is a tool which test the vulnerability of sql injection (union based) 
+It is a tool which test the vulnerability of sql injection (union based) and bypass waf protections and dump the final query 
 
 syntex:-python dumper.py
 
