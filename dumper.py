@@ -160,7 +160,7 @@ def union(str):
     else:
         pass
 
-    r=requests.get(str, verify=False)
+    r=requests.get(str, verify=False,headers=random_headers())
     ss[:] = []
     a=""
     a=r.text
